@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Player</title>
+	<script src="https://kit.fontawesome.com/99ca9c3ebe.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="MusicPlayer.css">
+	<meta name="viewport" content="width=device-width, initial-scale = 1, minimum-scale = 1">
+</head>
+<body>
+	<nav class="navbar sticky">
+		<a class="navbar-brand" href="#">
+			<div class="nav-logo">
+				<div class="pill-container">
+					<div class="pill smpill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill mdpill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill mdpill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill mdpill"></div>
+				</div>
+				<div class="pill-container">
+					<div class="pill smpill"></div>
+				</div>
+			</div>
+		</a>
+		<div class="nav-item">
+			<ul class="nav-list">
+				<li>
+					<a href="#">Favourites</a>
+				</li>
+			</ul>
+		</div>
+		<div class="search-container">
+			<form class="search">
+				<button type="submit" id="search-icon"><i class="fas fa-search"></i></button>
+				<input type="" name="" placeholder="Search">
+				<button type="submit" id="mic-icon"><i class="fas fa-microphone"></i></button>
+			</form>
+		</div>
+		<div class="profile">
+			<button type="submit"><i class="fas fa-bell"></i></button>
+			<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFsqqBPDLUCXg/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=O5_UeM26u9IhXWW_t4ePAelcY5vUPWJiy8EMGh6ugfY">
+		</div>
+	</nav>
+	<main>
+		<div class="slideshow">
+			<section class="carousel" aria-label="Gallery">
+				<ol class="carousel__viewport">
+					<li id="carousel__slide1" tabindex="0" class="carousel__slide img1">
+						<div class="carousel__snapper">
+							<a href="#carousel__slide4"
+							   class="carousel__prev">Go to last slide</a>
+							<a href="#carousel__slide2"
+							   class="carousel__next">Go to next slide</a>
+						</div>
+					</li>
+					<li id="carousel__slide2" tabindex="0" class="carousel__slide img2">
+						<div class="carousel__snapper">
+							<a href="#carousel__slide1"
+							 class="carousel__prev">Go to previous slide</a>
+							<a href="#carousel__slide3"
+							 class="carousel__next">Go to next slide</a>
+						</div>
+					</li>
+					<li id="carousel__slide3" tabindex="0" class="carousel__slide img3">
+						<div class="carousel__snapper">
+							<a href="#carousel__slide2"
+							 class="carousel__prev">Go to previous slide</a>
+							<a href="#carousel__slide4"
+							 class="carousel__next">Go to next slide</a>
+						</div>
+					</li>
+					<li id="carousel__slide4" tabindex="0" class="carousel__slide img4">
+						<div class="carousel__snapper">
+							<a href="#carousel__slide3"
+							 class="carousel__prev">Go to previous slide</a>
+							<a href="#carousel__slide1"
+							 class="carousel__next">Go to first slide</a>
+						</div>
+					</li>
+				</ol>
+				<aside class="carousel__navigation">
+					<ol class="carousel__navigation-list">
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+						</li>
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+						</li>
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+						</li>
+						<li class="carousel__navigation-item">
+							<a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+						</li>
+					</ol>
+				</aside>
+			</section>
+		</div>
+		<section class="latest-release" id="release">
+			<div class="cards title">
+				<span class="headings"> Latest Release </span>
+			</div>
+			<div class="cards">
+				<div class="cards-image-container">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+					<div class="overlay">
+						<a href="#bottom-player" target="_parent" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<div class="cards-details-container">
+					<span class="cards-text">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container">
+					<i class="fas fa-ellipsis-h"></i>
+					<span>5:02</span>
+					<div class="dialog" id="dialog">
+						<p>
+							<i class="fas fa-play" style="display: inline-block;"></i> &nbsp; &nbsp; Play Now
+						</p>
+						<hr>
+						<p><i class="fas fa-plus"></i> &nbsp; &nbsp; Add to Queue</p>
+						<hr>
+						<p><i class="fas fa-bars"></i><i class="fas fa-plus"></i> &nbsp;Add to Favorites</p>
+						<hr>
+						<p><i class="fas fa-info-circle"></i> &nbsp; &nbsp; Get Info</p>
+					</div>
+				</div>
+			</div>
+			<div class="cards">
+				<div class="cards-image-container">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+					<div class="overlay">
+						<a href="#bottom-player" target="_parent" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<div class="cards-details-container">
+					<span class="cards-text">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container">
+					<i class="fas fa-ellipsis-h"></i>
+					<span>4:02</span>
+					<div class="dialog" id="dialog">
+						<p>
+							<i class="fas fa-play" style="display: inline-block;"></i> &nbsp; &nbsp; Play Now
+						</p>
+						<hr>
+						<p><i class="fas fa-plus"></i> &nbsp; &nbsp; Add to Queue</p>
+						<hr>
+						<p><i class="fas fa-bars"></i><i class="fas fa-plus"></i> &nbsp;Add to Favorites</p>
+						<hr>
+						<p><i class="fas fa-info-circle"></i> &nbsp; &nbsp; Get Info</p>
+					</div>
+				</div>
+			</div>
+			<div class="cards">
+				<div class="cards-image-container">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+					<div class="overlay">
+						<a href="#bottom-player" target="_parent" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<div class="cards-details-container">
+					<span class="cards-text">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container">
+					<i class="fas fa-ellipsis-h"></i>
+					<span>4:42</span>
+					<div class="dialog" id="dialog">
+						<p>
+							<i class="fas fa-play" style="display: inline-block;"></i> &nbsp; &nbsp; Play Now
+						</p>
+						<hr>
+						<p><i class="fas fa-plus"></i> &nbsp; &nbsp; Add to Queue</p>
+						<hr>
+						<p><i class="fas fa-bars"></i><i class="fas fa-plus"></i> &nbsp;Add to Favorites</p>
+						<hr>
+						<p><i class="fas fa-info-circle"></i> &nbsp; &nbsp; Get Info</p>
+					</div>
+				</div>
+			</div>
+			<div class="cards">
+				<div class="cards-image-container">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+					<div class="overlay">
+						<a href="#bottom-player" target="_parent" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<div class="cards-details-container">
+					<span class="cards-text">Parachutes</span>
+					<span class="cards-text cards-text-date">May 29, 2018</span>
+				</div>
+				<div class="options-container"> 
+					<i class="fas fa-ellipsis-h"></i>	
+					<span>4:29</span>
+					<div class="dialog" id="dialog">
+						<p>
+							<i class="fas fa-play" style="display: inline-block;"></i> &nbsp; &nbsp; Play Now
+						</p>
+						<hr>
+						<p><i class="fas fa-plus"></i> &nbsp; &nbsp; Add to Queue</p>
+						<hr>
+						<p><i class="fas fa-bars"></i><i class="fas fa-plus"></i> &nbsp;Add to Favorites</p>
+						<hr>
+						<p><i class="fas fa-info-circle"></i> &nbsp; &nbsp; Get Info</p>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-player" id="bottom-player">
+				<div class="artist-player">
+					<div class="cards-image-container">
+						<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+					</div>
+					<div class="cards-details-container">
+						<span class="cards-text">Spacebound</span>
+						<span class="cards-text cards-text-date">Recovery</span>
+					</div>
+					<div class="options-container align-icons"> 
+						<i class="far fa-heart" style="font-size: 1.2rem;"></i>	
+						<i class="fas fa-ban" style="font-size: 1.2rem;"></i>
+					</div>
+				</div>
+				<div class="player">
+					<div class="controls">
+						<i class="fas fa-random" style="font-size: 1.1rem;"></i>
+						<i class="fas fa-backward" style="font-size: 1.1rem;"></i>
+						<i class="fas fa-pause-circle" style="font-size: 2rem;"></i>
+						<i class="fas fa-forward" style="font-size: 1.1rem;"></i>
+						<i class="fas fa-retweet" style="font-size: 1.1rem;"></i>
+					</div>
+					<div class="timer">
+						<div class="time">
+							<span>2:32</span>
+						</div>
+						<div class="line">
+							<hr class="highlight">
+						</div>
+						<div>
+							<i class="fas fa-circle pb"></i>
+						</div>
+						<div class="line ml">
+							<hr>
+						</div>
+						<div class="time">
+							<span>4:52</span>
+						</div>
+					</div>
+				</div>
+				<div class="player-side">
+					<i class="fas fa-indent"></i>
+					<i class="fas fa-desktop"></i>
+					<i class="fas fa-volume-up"></i>
+					<div class="line">
+						<hr class="highlight" style="width: 40px; margin-left: -20px;">
+					</div>
+					<div style="color: white; margin-left: -55px; margin-top: -23px;">
+						<i class="fas fa-circle pb"></i>
+					</div>
+					<div class="line ml" style="width: 30px;">
+						<hr>
+					</div>
+					<i class="fas fa-expand-alt"></i>
+				</div>
+				<div class="cross">
+					<a href="#" style="color: grey; font-size: 1.2rem;">
+						<i class="fas fa-times-circle"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="popular-artist">
+			<div class="cards title">
+				<span class="headings"> Popular Artist </span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://i2.wp.com/hkpub.net/wp-content/uploads/2019/07/Ed-Sheeran-Press-Photo-2-Credit-Mark-Surridge-crop.jpg?w=1580&ssl=1">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">ED Sheeran</span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://www.straight.com/files/v3/styles/gs_large/public/images/17/09/coldplay_1.jpg?itok=ApVZCh8p">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" target="_top" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">Coldplay</span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://diy-magazine.s3.amazonaws.com/d/diy/Artists/D/Dua-Lipa/Dua-Lipa-4-lo-res-1.jpg">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" target="_top" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">Dua Lipa</span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/10/Eminem-Press-Photo-1-770x470.jpg">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" target="_top" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">Eminem</span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://static.stereogum.com/uploads/2018/05/Charlie-Puth-1525722403-640x640.jpg">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" target="_top" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">Charlie Puth</span>
+			</div>
+			<div class="artist-container">
+				<div class="artist-image">
+					<img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iaqVDxG5ucBU/v1/1400x-1.jpg">
+					<div class="overlay">
+						<a href="SinglePlaylistScreen.html" target="_top" class="icon">
+							<i class="fas fa-play"></i>
+						</a>
+					</div>
+				</div>
+				<span class="cards-text">Taylor Swift</span>
+			</div>
+			<div class="artist-playlist"></div>
+		</section>
+		<section class="stations">
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://lh3.googleusercontent.com/ozBgNIApEQ2n-RmasJ8-H488wj8w6yTJbI7vIaPkWwmOvIgpfnqqUye1L-O3dvaxoNwz=s360-rw">
+				</div>
+				<div class="centered">Stations</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://e-cdns-images.dzcdn.net/images/cover/baa1e5e0b73ec37c566acaebca7ba0ea/264x264-000000-80-0-0.jpg">
+				</div>
+				<div class="centered">Love</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdoxP5T5ohPCeiYaPTwvIZkJdP3h9LAwoDwYLiYYaGNw&usqp=CAU&ec=45707743">
+				</div>
+				<div class="centered">Retro</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://www.nme.com/wp-content/uploads/2016/09/2014BeachGetty466199465060214-1.jpg">
+				</div>
+				<div class="centered">Chill</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://www.brandcrowd.com/gallery/brands/pictures/picture15480811431803.jpg">
+				</div>
+				<div class="centered">Workout</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="http://bajarockmusic.com/wp-content/themes/rock-star-pro/images/gallery/slider-01-1920x1080.jpg">
+				</div>
+				<div class="centered">Rock</div>
+			</div>
+			<div class="stations-container">
+				<div class="artist-image">
+					<img src="https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/Pictures/web/d/d/c/vinyl-record-lyrics-illustration.jpg?itok=xdsXRxkU">
+				</div>
+				<div class="centered">Pop</div>
+			</div>
+		</section>
+		<section class="genre">
+			<div class="genre-container">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTOX-Kma8CZglc17xvZn3i5-Tvki4LPFr1mb34bK6IRw&usqp=CAU&ec=45707743">
+				<div class="centered">Party</div>
+			</div>
+			<div class="genre-container">
+				<img src="https://thestaceyjewell.files.wordpress.com/2019/04/edm3.jpg">
+				<div class="centered">Electronic</div>
+			</div>
+			<div class="genre-container">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShR7EFHwKfxaIlum8KshmeCh8rpc49N-7eRN75qn8Qgg&usqp=CAU&ec=45707743">
+				<div class="centered">Road Trip</div>
+			</div>
+		</section>
+		<section class="latest-english">
+			<div class="cards title">
+				<span class="headings">Latest English</span>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Closer_%28featuring_Halsey%29_%28Official_Single_Cover%29_by_The_Chainsmokers.png">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Closer</span>
+					<span class="cards-text cards-text-date latest-date-fs">Aug 26, 2016</span>
+				</div>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://upload.wikimedia.org/wikipedia/en/7/76/Firestone-Kygo-featuring-Conrad.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Firestone</span>
+					<span class="cards-text cards-text-date latest-date-fs">May 20, 2016</span>
+				</div>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://1.bp.blogspot.com/-RJ5YFRHWBwk/WAyLBZR3MBI/AAAAAAAAABU/dQZPaIl2BHAhMmTMdDRJZ4OpItPtnra9wCLcB/s1600/chainsmokers-all-we-know-cover-413x413.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">All We Know</span>
+					<span class="cards-text cards-text-date latest-date-fs">Oct 20, 2017</span>
+				</div>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ68TFa9D2xbITVQ8GC76NfBIy9LGDeF-oXSKA8JK3k1A&usqp=CAU&ec=45707743">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Firestone</span>
+					<span class="cards-text cards-text-date latest-date-fs">May 20, 2016</span>
+				</div>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://images.hungama.com/c/1/ee8/91b/356619/356619_300x300.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Fix You</span>
+					<span class="cards-text cards-text-date latest-date-fs">Sep 10, 2017</span>
+				</div>
+			</div>
+			<div class="latest-english-container">
+				<div class="latest-image">
+					<img src="https://upload.wikimedia.org/wikipedia/en/d/da/Alan_Walker_-_Faded.png">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Faded</span>
+					<span class="cards-text cards-text-date latest-date-fs">Mar 31, 2014</span>
+				</div>
+			</div>
+		</section>
+		<section class="latest-hindi">
+			<div class="cards title">
+				<span class="headings">Latest Hindi</span>
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQO6f667mQX5OpLHqUUnQ_oxCQfZCZUXhho2Sz05OVZWg&usqp=CAU&ec=45707743">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Makhna</span>
+					<span class="cards-text cards-text-date latest-date-fs">Nov 26, 2018</span>
+				</div>
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://a10.gaanacdn.com/images/albums/58/2772458/crop_175x175_1567516167_2772458.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Khairiyat</span>
+					<span class="cards-text cards-text-date latest-date-fs">May 20, 2019</span>
+				</div>
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCjVfo2RUXaEVAspki1VX6X5tlVjkGcLQ0pXAZRYX8vg&usqp=CAU&ec=45707743">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Udd Gaye</span>
+					<span class="cards-text cards-text-date latest-date-fs">Oct 28, 2017</span>
+				</div>
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://a10.gaanacdn.com/images/albums/36/2261136/crop_175x175_1543307373_2261136.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Jaan Nisar</span>
+					<span class="cards-text cards-text-date latest-date-fs">May 20, 2018</span>
+				</div>
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://sklktcdnems07.cdnsrv.jio.com/c.saavncdn.com/943/Kohinoor-Hindi-2019-20191007230518-500x500.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Kohinoor</span>
+					<span class="cards-text cards-text-date latest-date-fs">Nov 10, 2018</span>
+				</div>	
+			</div>
+			<div class="latest-hindi-container">
+				<div class="latest-image">
+					<img src="https://a10.gaanacdn.com/images/albums/58/1475858/crop_175x175_1475858.jpg">
+				</div>
+				<div class="latest-details">
+					<span class="cards-text latest-fs">Wakhra Swag</span>
+					<span class="cards-text cards-text-date latest-date-fs">Jan 15, 2014</span>
+				</div>
+			</div>
+		</section>
+	</main>
+	<aside>
+		<div class="aside-heading">
+			<div>
+				<span>My Playlist</span>
+			</div>
+			<div class="dropdown">
+				<span style="color: #1DB954;font-size: 1rem;">Queue</span>
+				<i class="fas fa-angle-down"></i>
+				<div class="options-container">
+					<div class="dialog queue-dialog" id="dialog" style="color: black; font-size: 1rem;">
+						<p>Playlists</p>
+						<hr>
+						<p>Add to Favorites</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="aside-content">
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>01</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Coldplay_-_A_Head_Full_of_Dreams.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">A Head Full of Dreams</span>
+					<span class="cards-text cards-text-date">Mar 15, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>02</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://vignette.wikia.nocookie.net/e__/images/c/c1/Eminem_recovery_album_cover_2_big.png/revision/latest?cb=20131215190445&path-prefix=eminem" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Recovery</span>
+					<span class="cards-text cards-text-date">Aug 06, 2019</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>03</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://static.stereogum.com/uploads/2019/02/10encore-1551108997.png" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Encore</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+			<div class="cards aside-card">
+				<div class="number">
+					<span>04</span>
+				</div>
+				<div class="cards-image-container lm">
+					<img src="https://www.udiscovermusic.com/wp-content/uploads/2017/02/Coldplay-Parachutes-album-cover-web-optimised-820.jpg" class="cards-image">
+				</div>
+				<div class="cards-details-container lm">
+					<span class="cards-text" style="font-size: 0.7rem;">Parachutes</span>
+					<span class="cards-text cards-text-date">Jun 11, 2020</span>
+				</div>
+				<div class="options-container lm heart-icon">
+					<i class="fas fa-heart"></i>
+				</div>
+			</div>
+		</div>
+	</aside>
+</body>
+</html>	

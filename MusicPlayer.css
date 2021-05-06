@@ -1,0 +1,1156 @@
+body{
+	background: black;
+}
+
+/*---not to highligh the clickable items-----*/
+
+*:focus{
+	outline: none;
+}
+
+/*--------------Navigation Bar------------------------*/
+.navbar{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 100;
+}
+
+/*--to make the nav-bar stick at top---*/
+.sticky{
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+/*---the logo of the nav-bar ----*/
+
+.navbar-brand img{
+	display: inline-block;	
+	height: 50px;
+	width: 50px;
+	margin-left: 10px;
+}
+
+.nav-item{
+	display: inline-flex;
+	width: 20%;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.nav-list li a{
+	text-decoration: none;
+	justify-content: flex-start;
+	color: white;
+}
+
+.nav-list li{
+	list-style: none;
+}
+
+/*--search in the nav-bar ----*/
+
+.search-container{
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	width: 50%;
+}
+
+.search{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.search input{
+	background-color: #484848;
+	padding: 6px;
+	margin-top: 8px;
+  	font-size: 17px;
+  	border: none;
+	color: white;
+}
+
+ .search button {	
+ 	background-color: #484848;	
+ 	margin-top: 8px;
+ 	padding: 6px 10px;
+ 	font-size: 17px;
+ 	border: none;
+ }
+
+ .profile button{	
+ 	background-color: black;	
+ 	margin-top: 8px;
+ 	padding: 6px 10px;
+ 	font-size: 17px;
+ 	border: none;
+ }
+
+ .search button i, .profile button i{
+ 	color: white;
+ }
+
+ #search-icon{
+ 	border-top-left-radius: 20%; 
+ 	border-bottom-left-radius: 20%;	
+ }
+
+ #mic-icon{
+ 	border-top-right-radius: 20%;
+ 	border-bottom-right-radius: 20%;
+ }
+
+/*----user profile picture----*/
+
+.profile{
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	width: 20%;
+}
+
+.profile img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+@media screen and (max-width: 768){
+	.navbar{
+		width: 30px;
+	}
+}
+
+@media screen and (max-width: 572){
+	.nav-item{
+		display: none;
+	}
+	.nav-list{
+		display: none;
+	}
+}
+
+
+
+/*-----------------main-------------------*/
+main{
+	display: inline-block;
+	width: 70%;
+}
+
+
+
+/*----------------section------------------*/
+
+.latest-release,.popular-artist,.stations,.genre,.latest-english,.latest-hindi{
+	width: 100%;
+	height: 30vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+/*---heading of the section----*/
+
+.headings{
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: white;
+	margin-left: 1%;
+}
+
+
+/*---individuAL CARDS of the section----*/
+.cards{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 4px;
+	width: 45%;
+	height: 38%;
+}
+
+/*-----styling of the heading------*/
+.title{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 10%;
+	margin-bottom: 10px;
+}
+
+.cards-image-container{
+	width: 20%;
+	height: 100%;
+}
+
+.cards-image{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/*--the play button over the cards image---*/
+
+.overlay{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin-top: -92%;
+	opacity: 0;
+}
+
+.icon{
+	position: absolute;
+	color: white;
+	margin-left: 40%;
+	margin-top: 25px;
+}
+
+.cards-image-container:hover .overlay{
+	opacity: 1;
+}
+
+.cards-image-container:hover .cards-image{
+	opacity: 0.5;
+}
+
+
+.cards-details-container{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	width: 55%;
+	height: 100%;
+	margin-left: 10%;
+}
+
+/*------text on cards-------*/
+
+.cards-text{
+	margin-bottom: 5%;
+	color: white;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+/*-----release date on the cards----*/
+
+.cards-text-date{
+	color: grey;
+	font-weight: normal;
+	font-size: 0.8rem;
+}
+
+/*------ellipsis button styling which opens a dropdown--------*/
+
+.options-container{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.options-container i{
+	color: grey;
+	margin-bottom: 10px;
+}
+
+.options-container span{
+	color: grey;
+	font-size: 0.8rem;
+}
+
+/*----dropdown on hover-----*/
+
+.dialog{
+	display: none;
+    position: absolute;
+    overflow: hidden;
+    width: 9%;
+    height: 20%;
+    margin-left: -9%;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.dialog p{
+	margin-left: 5px;
+	font-size: 0.6rem;
+	height: 10px;
+}
+
+.options-container i:hover~.dialog{
+	display: block;
+}
+
+.dialog:hover{
+	display: block;
+}
+
+
+/*----------------------bottom-player----------------------*/
+
+.bottom-player{
+	display: none;
+	flex-wrap: wrap;
+	height: 60px;
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+	z-index: 100;
+	margin-left: -53px;
+	background-color: #212121;
+	padding-top: 2px;
+}
+
+.artist-player{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 50px;
+	width: 22%;
+}
+
+.align-icons{
+	width: 50px;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-left: -15px;
+	z-index: 2;
+	margin-top: 4px;
+}
+
+.align-icons>i:hover{
+	color: red;
+}
+
+.player{
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	justify-content: center;
+	align-items: center;
+}
+
+/*----the play.pause.forward and backward buttons on bottom music player---*/
+
+.controls{
+	display: flex;
+	flex-wrap: wrap;
+	height: 50%;
+	width: 30%;
+	justify-content: space-around;
+	align-items: center;
+	color: grey;
+	margin-left: 4%;
+	margin-top: 5px;
+}
+
+.controls>i:hover{
+	color: white;
+}
+
+/*----the timer of the song---*/
+
+.timer{
+	display: flex;
+	flex-wrap: wrap;
+	height: 50%;
+	width: 70%;
+	color: white;
+	justify-content: space-between;
+}
+
+.line{
+	color: grey;
+	width: 35%;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.pb{
+	position: absolute;
+	margin-left: -45px;
+	margin-top: 9px;
+	font-size: 0.7rem;
+}
+
+.highlight{
+	border: 2px solid #1DB954;
+}
+
+.ml{
+	margin-left: -70px;
+}
+
+.time{
+	display: flex;
+	flex-wrap: wrap;
+	width: 30px;
+	color: grey;
+	align-items: center;
+}
+
+/*---the extra controls on the player---*/
+
+.player-side{
+	display: flex;
+	flex-wrap: wrap;
+	width: 20%;
+	justify-content: space-around;
+	color: grey;
+	align-items: center;
+}
+
+.player-side>i:hover{
+	color: white;
+}
+
+/*---closing the player----*/
+
+.cross{
+	display: flex;
+	flex-wrap: wrap;
+	width: 3%;
+	justify-content: center;
+	align-items: center;
+}
+
+.cross i:hover{
+	color: red;
+}
+
+.bottom-player:target{
+	display: inline-flex;
+}
+
+
+
+/*-------------popular artist----------------------*/
+
+
+.artist-container,.stations-container,.latest-english-container,.latest-hindi-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 80%;
+	width: 16%; 
+	margin-left: 1px;
+	text-align: center;
+}
+
+.artist-image{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 80%;
+	width: 80%;
+}
+
+.artist-image:hover .overlay{
+	opacity: 1;
+	margin-left: -50px;
+}
+
+.artist-image>img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+.artist-container:hover .artist-image>img{ 
+	opacity: 0.5;
+}
+
+
+/*-----------single-playlist-screen-----------------*/
+
+
+/*-----the new screen after clicking on the artist----*/
+
+.single-playlist{
+	width: 90%;
+	height: 50vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 10%;
+	margin-top: 10%;
+	background-color: #263238;
+}
+
+/*----main image-----*/
+
+.single-image{
+	width: 35%;
+	height: 100%;
+}
+
+.single-image img{
+	height: 100%;
+	width: 100%;
+}
+
+.single-details{
+	width: 62%;
+	height: 100%;
+	margin-left: 20px;
+}
+
+/*----artist name ---*/
+
+.artist-name{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.bh{
+	font-size: 1.5rem;
+}
+
+.bf{
+	font-size: 0.9rem;
+}
+
+.playbutton{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.playbutton button{
+	width: 100px;
+	height: 30px;
+	color: white;
+	background: linear-gradient(to left, #1DB954 25%, #fbc02d);
+}
+
+button[type=submit]{
+	cursor: pointer;
+}
+
+/*---follow button--*/
+
+.follow{
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
+.follow:hover{
+	color: white;
+	cursor: pointer;
+}
+
+/*---main music content on single playlist screen----*/
+
+.music{
+	width: 90%;
+	height: 150vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+/*---cards containing all the details of song-------*/
+
+.main-cards{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	background-color: #263238;
+}
+
+/*------images of the main cards-----*/
+
+.m-images{
+	display: flex;
+	flex-wrap: wrap;
+	width: 60px;
+	height: 80%;
+	margin-left: 20px;
+}
+
+.m-images img{
+	height: 100%;
+	width: 100%;
+}
+
+
+.hp-icon{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100px;
+	color: grey;
+	margin-left: 80px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/*---heart and add buttons---------*/
+
+.heart:hover{
+	color: red;
+}
+
+.plus:hover{
+	color: white;
+}
+
+/*------------aside-single-playlist-screen-------------------*/
+.scards{
+	width: 100%;
+}
+
+.scards-f{
+	font-size: 0.8rem;
+}
+
+.similar-artist:hover{
+	border: none !important;
+}
+
+
+
+/*----------------stations-------------------*/
+
+.stations{
+	height: 20vh;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #263238;
+}
+
+/*---container with images of the stations------*/
+
+.stations-container{
+	width: 13%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+	color: white;
+}
+
+.stations-container img{
+	opacity: 0.9;
+	filter: sepia(100%) brightness(70%) saturate(800%);
+}
+
+/*---aligining the text---*/
+
+.centered{
+	position: absolute;
+	left: 40%;
+	top: 40%;
+}
+
+/*--------------------genre---------------------*/
+
+.genre{
+	justify-content: space-between;
+	height: 20vh;
+}
+
+.genre-container{
+	position: relative;
+	width: 31%;
+	height: 100%;
+	color: white;
+	overflow: hidden;
+}
+
+.genre-container img{
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	filter: sepia(20%) brightness(70%) saturate(100%);
+	transition: all 0.8s ease-in-out;
+}
+
+.genre-container:hover img{
+	transform: scale(1.4);
+}
+
+
+/*----------------latest-english----------------*/
+
+.latest-english, .latest-hindi{
+	justify-content: space-between;	
+}
+
+.latest-english-container,.latest-hindi-container{
+	width: 15%;
+	padding: 5px;
+	background-color: #263238;
+	padding-bottom: 10px;
+}
+
+.latest-image{
+	width: 100%;
+	height: 75%;
+}
+
+.latest-image img{
+	height: 100%;
+	width: 100%;
+}
+
+.latest-details{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 25%;
+	margin-top: 3px;
+}
+
+.latest-details span{
+	display: block;
+	text-align: left;
+}
+
+.latest-fs{
+	 font-size: 0.8rem;
+	 margin-top: 5px;
+}
+
+.latest-date-fs{
+	font-size: 0.6rem;
+}
+
+
+/*-----------------------------aside-----------------------------*/
+
+aside{
+	display: inline-block;
+	margin-left: 7%;
+	width: 22%;
+	height: 150vh;
+	vertical-align: top;
+	margin-top: 80px;
+}
+
+.aside-heading{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: auto;
+	height: 5%;
+	color: white;
+	font-weight: bold;
+	font-size: 1.4rem;
+	font-family: sans-serif;
+}
+
+.queue-dialog{
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	height: 70px;
+	width: 120px;
+	margin-left: -55px;
+	margin-top: -3px;
+	background-color: white;
+	z-index: 100;
+}
+
+.dropdown>i:hover~.options-container>.queue-dialog{
+	display: block;
+}
+
+.queue-dialog:hover{
+	display: block;
+}
+
+
+.aside-content{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 95%;
+	overflow: scroll;
+}
+
+.aside-content::-webkit-scrollbar {
+  display: none;
+}
+
+.aside-card{
+	margin-top: 10px;
+	width: 100%;
+	height: 7%;
+}
+
+.aside-card:hover{
+	border: 1px solid #1DB954;
+	border-left-width: 4px;
+	transition: all ease-in;
+}
+
+.lm{
+	margin-left: 2%;
+}
+
+.number{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 0.9rem;
+	color: grey;
+}
+
+.heart-icon i{
+	margin-top: 135%;
+}
+
+.heart-icon i:hover{
+	color: red;
+	transition: all ease-in-out;
+}
+
+
+/*------------------------player-logo-------------------------------------*/
+/*--the naimation of the logo---*/
+
+@keyframes changeShape{
+	from{
+		transform: scaleY(1);
+	}
+	to{
+		transform: scaleY(1.4);
+	}
+}
+
+/*----main logo of the nav-bar------*/
+
+.nav-logo{
+	margin-left: -20px;
+	margin-top: 15px;
+}
+
+/*---logo container----*/
+
+.pill-container{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	width: 12px;
+}
+
+/*---small shaped pills----*/
+
+.smpill{
+	height: 1rem !important;
+	width: 0.5rem !important;
+}
+
+/*---medium shaped pills----*/
+
+.mdpill{
+	height: 2rem !important;
+	width: 0.6rem !important;
+}
+
+/*---large shaped pills----*/
+.pill{
+	position: absolute;
+	height: 3rem;
+	width: 0.7rem;
+	background-color: #1DB954;
+	border-radius: 0.8rem;
+	animation: changeShape 0.4s ease-in-out infinite alternate;
+}
+
+
+
+/*---------------------home-screen-carousel---------------------*/
+
+
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+/*----container of the slideshow------*/
+
+.slideshow {
+	width: 50rem;
+	height: 25rem;
+	margin-top: 8%;
+	margin-left: 5%;
+}
+
+/*---hide scrollbar of the images---*/
+
+*{
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+/*---styling the list -----*/
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*----image conatainer of the home screen carousel---*/
+
+.carousel {
+  position: relative;
+  padding-top: 50%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+/*----carousel-viewing--area------*/
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  height: 25rem;
+}
+
+/*---carousel slide----*/
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: #f99;
+  counter-increment: item;
+}
+
+.carousel__slide:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+  color: #fff;
+  font-size: 2em;
+}
+
+/*----images of the home screen carousel------*/
+
+.img1{
+  background-image: url(https://i.insider.com/5e46d04896eee679e00c4354?width=1400&format=jpeg&auto=webp);
+  background-size: cover;
+}
+
+.img2{
+  background-image: url(https://image.freepik.com/free-vector/modern-music-event-poster-template_1361-1292.jpg);
+  background-size: cover;
+}
+
+.img3{
+  background-image: url(https://images-na.ssl-images-amazon.com/images/I/61fu9MqTMML._AC_.jpg);
+  background-size: cover;
+}
+
+.img4{
+  background-image: url(https://image.freepik.com/free-vector/music-event-poster-template-with-colorful-shapes_1361-1591.jpg);
+  background-size: cover;
+}
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30rem;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel__slide:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+/*-------navigation of the carousel, the buttons on the side-----*/
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 20%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+/*----the images of the side navigation button-----*/
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
